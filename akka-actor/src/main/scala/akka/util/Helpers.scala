@@ -14,6 +14,8 @@ import java.util.Locale
 
 object Helpers {
 
+  def toRootLowerCase(s: String) = s.toLowerCase(Locale.ROOT)
+  
   val isWindows: Boolean = System.getProperty("os.name", "").toLowerCase(Locale.ROOT).indexOf("win") >= 0
 
   def makePattern(s: String): Pattern = Pattern.compile("^\\Q" + s.replace("?", "\\E.\\Q").replace("*", "\\E.*\\Q") + "\\E$")
